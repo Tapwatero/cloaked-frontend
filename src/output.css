@@ -1,5 +1,5 @@
 .m-0 {
-  margin: 0;
+  margin: 0px;
 }
 
 .mt-4 {
@@ -85,7 +85,7 @@
 }
 
 .border-0 {
-  border-width: 0;
+  border-width: 0px;
 }
 
 .bg-gray-700 {
@@ -104,7 +104,7 @@
 }
 
 .p-0 {
-  padding: 0;
+  padding: 0px;
 }
 
 .p-2 {
@@ -130,7 +130,7 @@
 }
 
 .outline-0 {
-  outline-width: 0;
+  outline-width: 0px;
 }
 
 body {

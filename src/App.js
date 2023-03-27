@@ -58,9 +58,9 @@ const Socket = () => {
     return (
         <div className={"bg-gray-800 w-full h-full p-0 m-0 box-border h-screen"}>
             <div className={"w-full h-full p-0 m-0 box-border flex justify-center items-center flex-col"}>
-                <div id={"messages"} className={"-p-4 bg-gray-900 br-5 text-center rounded-3xl overflow-y-auto text-white w-4/5 h-4/5 p-0"}>
+                <div id={"messages"} className={" -p-4 bg-gray-900 br-5 text-center rounded-3xl overflow-y-auto text-white w-4/5 h-4/5 p-0"}>
                     {messages.map((message, index) => (
-                        <div className={"message font-sans text-2xl"} key={index}>{message}</div>
+                        <div className={"message mt-2 font-sans text-2xl"} key={index}>{message}</div>
                     ))}
                 </div>
 
