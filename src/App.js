@@ -22,7 +22,7 @@ const Socket = () => {
 
     // Get Messages
     useEffect(() => {
-        const socket = new WebSocket('ws://152.67.137.125:8000');
+        const socket = new WebSocket('wss://tapwatero.uk.ms:8000');
         setSocket(socket);
 
         socket.addEventListener('open', () => {
