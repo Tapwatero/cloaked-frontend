@@ -70,7 +70,7 @@ const Socket = () => {
                     </div>
 
                     <div className={"flex w-1/3 justify-center items-center"}>
-                        <input id={"message-input"} className={"w-full mt-4 p-2 truncate ...  rounded-full text-white text-center border-0 outline-0 text-2xl bg-gray-700"} placeholder={"Hey! Whats going on?"} onKeyUp={(event) => event.key === 'Enter' && sendMessage()} onChange={handleInputChange}></input>
+                        <input id={"message-input"} className={"break-words w-full mt-4 p-2 truncate ...  rounded-full text-white text-center border-0 outline-0 text-2xl bg-gray-700"} placeholder={"Hey! Whats going on?"} onKeyUp={(event) => event.key === 'Enter' && sendMessage()} onChange={handleInputChange}></input>
                     </div>
 
                 </div>
