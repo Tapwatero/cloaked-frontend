@@ -71,17 +71,17 @@ const Socket = () => {
                     ))}
                 </div>
 
-                <div className={"grow-0 flex flex-row gap-4 w-full justify-center items-center"}>
-                    <div className={"flex justify-center items-center"}>
+                <div className={"sm:flex-col grow-0 flex flex-wrap  gap-4 w-full justify-center items-center lg:flex-row"}>
+                    <div className={"flex justify-center items-center lg:w-1/5 w-5/6"}>
                         <input
-                            className={"mt-4 p-2 truncate ... rounded-full text-white text-center border-0 outline-0 text-2xl bg-gray-700"}
+                            className={"  w-full mt-4 p-2 truncate ... rounded-full text-white text-center border-0 outline-0 text-2xl bg-gray-700"}
                             defaultValue={"Anonymous"} onKeyUp={(event) => event.key === 'Enter' && sendMessage()}
                             onChange={handleNameChange}></input>
                     </div>
 
-                    <div className={"flex w-1/3 justify-center items-center"}>
+                    <div className={"flex pb-8  justify-center items-center lg:w-1/3 w-5/6"}>
                         <input id={"message-input"}
-                               className={"break-words w-full mt-4 p-2 truncate ...  rounded-full text-white text-center border-0 outline-0 text-2xl bg-gray-700"}
+                               className={"break-words  mt-4 p-2 truncate ...  w-full  rounded-full text-white text-center border-0 outline-0 text-2xl bg-gray-700"}
                                placeholder={"Hey! Whats going on?"}
                                onKeyUp={(event) => event.key === 'Enter' && sendMessage()}
                                onChange={handleInputChange}></input>
