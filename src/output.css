@@ -1,3 +1,7 @@
+.relative {
+  position: relative;
+}
+
 .m-0 {
   margin: 0px;
 }
@@ -26,6 +30,10 @@
   height: 80%;
 }
 
+.h-6 {
+  height: 1.5rem;
+}
+
 .h-full {
   height: 100%;
 }
@@ -42,12 +50,25 @@
   width: 83.333333%;
 }
 
+.w-6 {
+  width: 1.5rem;
+}
+
 .w-full {
   width: 100%;
 }
 
 .grow-0 {
   flex-grow: 0;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.select-none {
+  -webkit-user-select: none;
+          user-select: none;
 }
 
 .flex-col {
@@ -70,8 +91,13 @@
   gap: 1rem;
 }
 
-.overflow-y-auto {
-  overflow-y: auto;
+.gap-x-4 {
+  -webkit-column-gap: 1rem;
+          column-gap: 1rem;
+}
+
+.overflow-x-auto {
+  overflow-x: auto;
 }
 
 .scroll-smooth {
@@ -131,6 +157,10 @@
   padding-bottom: 2rem;
 }
 
+.text-left {
+  text-align: left;
+}
+
 .text-center {
   text-align: center;
 }
@@ -144,21 +174,34 @@
   line-height: 2rem;
 }
 
+.font-bold {
+  font-weight: 700;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.opacity-0 {
+  opacity: 0;
 }
 
 .outline-0 {
   outline-width: 0px;
 }
 
+.duration-500 {
+  transition-duration: 500ms;
+}
+
 body {
-  height: 100vh;
-  background-color: red;
-  width: 100vw !important;
-  margin: 0;
   padding: 0;
+  margin: 0;
 }
 
 /* ===== Scrollbar CSS ===== */
@@ -184,6 +227,42 @@ body {
 *::-webkit-scrollbar-thumb {
   background-color: #cecece;
   border-radius: 10px;
+}
+
+.hover\:h-7:hover {
+  height: 1.75rem;
+}
+
+.hover\:w-7:hover {
+  width: 1.75rem;
+}
+
+.hover\:fill-green-200:hover {
+  fill: #bbf7d0;
+}
+
+.hover\:fill-green-300:hover {
+  fill: #86efac;
+}
+
+.hover\:fill-red-200:hover {
+  fill: #fecaca;
+}
+
+.hover\:fill-red-400:hover {
+  fill: #f87171;
+}
+
+.hover\:fill-red-500:hover {
+  fill: #ef4444;
+}
+
+.hover\:opacity-75:hover {
+  opacity: 0.75;
+}
+
+.group:hover .group-hover\:opacity-100 {
+  opacity: 1;
 }
 
 @media (min-width: 640px) {
