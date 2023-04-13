@@ -1,28 +1,33 @@
 import { useState } from "react";
 import { PersonFillAdd } from "react-bootstrap-icons";
-import { Action } from "../Main";
 import toast from "react-hot-toast";
+import axios from "axios";
 
 
 export function MessagePardonButton(props) {
 
     const [clicked, setClicked] = useState();
-    const socket = props.socket;
 
-
-    const payload = {
-        Action: Action.PARDON,
-        SID: props.SID,
-        MID: props.MID
-    }
 
     const handleClick = () => {
         if (clicked) {
             return;
         }
 
-        socket.send(JSON.stringify(payload));
-        toast.success("User Pardon Executed!");
+        // Session to authenticate, Session to ban
+
+        const data = {
+            sessionID: props.sessionID,
+            targetSessionID: props.targetSessionID
+        }
+
+        axios.post("https://cloaked-383019.nw.r.appspot.com/pardon", data).then(r => {
+            if (r.data.success) {
+                toast.success(r.data.success);
+            } else {
+                toast.error(r.data.error);
+            }
+        });
 
         setClicked(true);
         setTimeout(() => {

@@ -1,25 +1,32 @@
 import { useState } from 'react'
-import { PersonFillX } from 'react-bootstrap-icons'
-import { Action } from "../Main";
 import toast from "react-hot-toast";
+import { PersonFillX } from "react-bootstrap-icons";
+import axios from "axios";
 
 export function MessageKickButton(props) {
     const [clicked, setClicked] = useState()
-    const socket = props.socket;
 
     const handleClick = () => {
         if (clicked) {
             return
         }
 
-        const payload = {
-            Action: Action.KICK,
-            SID: props.SID,
-            MID: props.MID
+
+        const data = {
+            sessionID: props.sessionID,
+            targetSessionID: props.targetSessionID
         }
 
-        socket.send(JSON.stringify(payload));
-        toast.success("User Kick Executed!");
+
+
+
+        axios.post("https://cloaked-383019.nw.r.appspot.com/kick", data).then(r => {
+            if (r.data.success) {
+                toast.success(r.data.success);
+            } else {
+                toast.error(r.data.error);
+            }
+        });
 
 
 
