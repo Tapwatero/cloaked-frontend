@@ -1,7 +1,7 @@
 import ReactDOM from "react-dom/client";
 import Main from "./Main";
 import { Route, BrowserRouter, Routes} from 'react-router-dom';
-import { Authenticate } from "./Authenticate";
+import { Authenticate } from "./components/Authenticate";
 import { RoomNotFound } from "./components/RoomNotFound";
 import { Room } from "./components/Room";
 import { PageNotFound } from "./components/PageNotFound";

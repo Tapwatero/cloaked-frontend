@@ -2,8 +2,11 @@ import { RoomCreateButton } from "./RoomCreateButton";
 import { AuthenticateButton } from "./AuthenticateButton";
 import { RoomCopyLinkButton } from "./RoomCopyLinkButton";
 import { HomeButton } from "./HomeButton";
+import { RoomMuteButton } from "./RoomMuteButton";
+import { RoomUnmuteButton } from "./RoomUnmuteButton";
+import { Fragment } from "react";
 
-export function ActionBar() {
+export function ActionBar(props) {
 
 
     return (
@@ -11,7 +14,14 @@ export function ActionBar() {
             <HomeButton></HomeButton>
             <RoomCreateButton></RoomCreateButton>
             <RoomCopyLinkButton></RoomCopyLinkButton>
-            <AuthenticateButton></AuthenticateButton>
+            {props.authenticated ? (
+                <Fragment>
+                    <RoomMuteButton sessionID={props.sessionID} code={props.code}></RoomMuteButton>
+                    <RoomUnmuteButton sessionID={props.sessionID} code={props.code}></RoomUnmuteButton>
+                </Fragment>
+                ) : (
+                <AuthenticateButton></AuthenticateButton>
+            )}
         </div>
     );
 }

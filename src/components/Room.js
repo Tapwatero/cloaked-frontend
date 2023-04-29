@@ -28,6 +28,7 @@ export function Room({ presetCode = null }) {
         axios.get(`https://cloaked-383019.nw.r.appspot.com/room/${code}`).then(r => {
             if (r.data.error) {
                 navigate("/room/404", { replace: true});
+                console.log(r.data.error);
             }
         });
 
@@ -50,7 +51,7 @@ export function Room({ presetCode = null }) {
         <Toaster reverseOrder={true} containerClassName={"font-sans"} position={"top-right"}/>
 
         <div className={'w-full h-full p-0 m-0 box-border flex justify-center items-center flex-col'}>
-            <ActionBar></ActionBar>
+            <ActionBar sessionID={cookies.sessionID} code={code} authenticated={authenticated}></ActionBar>
             <MessageList messages={messages} authenticated={authenticated} sessionID={cookies.sessionID}
                          socket={socket}></MessageList>
 

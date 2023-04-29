@@ -1,5 +1,5 @@
-import "./input.css";
-import "./output.css";
+import "../input.css";
+import "../output.css";
 import axios from "axios";
 import { LockFill } from "react-bootstrap-icons";
 import { useEffect, useRef, useState } from "react";
@@ -14,12 +14,15 @@ export function Authenticate() {
 
     const inputRefs = useRef([]);
     const [authenticated, setAuthenticated] = useState(false);
+    const [index, setIndex] = useState(0);
     const [cookies] = useCookies();
 
 
+
+
     useEffect(() => {
-        inputRefs.current[0].focus();
-    }, []);
+        inputRefs.current[index].focus();
+    });
 
 
     function attemptAuthentication() {
@@ -49,20 +52,17 @@ export function Authenticate() {
 
     function handleInput(e, index) {
         const inputLength = e.target.value.length;
-        const maxLength = e.target.maxLength;
+        // const maxLength = e.target.maxLength;
 
 
-        if (e.key === "Backspace" && inputLength === 0) {
-            if (inputRefs.current[index - 1] !== undefined) {
-                inputRefs.current[index - 1].focus();
+        setTimeout(() => {
+            console.log(inputLength);
+            if (inputLength === 0 && e.key === "Backspace") {
+                setIndex(index === 0 ? index : index -1);
+            } else if (e.key !== "Backspace") {
+                setIndex(index === 5 ? index : index + 1);
             }
-        }
-
-
-        if (inputLength === maxLength && inputRefs.current[index + 1] !== undefined) {
-            inputRefs.current[index + 1].focus();
-        }
-        e.preventDefault();
+        }, 5);
     }
 
 
@@ -84,27 +84,27 @@ export function Authenticate() {
 
                     <div
                         className={"gap-3 box-border flex justify-center items-center  flex w-4/5 h-1/3 [&>*]:rounded-lg items-center [&>*]:border-solid [&>*]:border-white [&>*]:bg-gray-800"}>
-                        <input disabled={authenticated} onKeyUp={(e) => handleInput(e, 0)}
+                        <input disabled={authenticated} onKeyDown={(e) => handleInput(e, 0)}
                                ref={(el) => (inputRefs.current[0] = el)}
                                type={"text"} inputMode="numeric" maxLength={1}
                                className={"bg-transparent font-sans text-2xl text-white capitalize outline-none h-1/2 w-9 md:w-16 text-center"}/>
-                        <input disabled={authenticated} onKeyUp={(e) => handleInput(e, 1)}
+                        <input disabled={authenticated} onKeyDown={(e) => handleInput(e, 1)}
                                ref={(el) => (inputRefs.current[1] = el)}
                                type={"text"} inputMode="numeric" maxLength={1}
                                className={"bg-transparent font-sans text-2xl text-white capitalize outline-none h-1/2 w-9 md:w-16 text-center"}/>
-                        <input disabled={authenticated} onKeyUp={(e) => handleInput(e, 2)}
+                        <input disabled={authenticated} onKeyDown={(e) => handleInput(e, 2)}
                                ref={(el) => (inputRefs.current[2] = el)}
                                type={"text"} inputMode="numeric" maxLength={1}
                                className={"bg-transparent font-sans text-2xl text-white capitalize outline-none h-1/2 w-9 md:w-16 text-center"}/>
-                        <input disabled={authenticated} onKeyUp={(e) => handleInput(e, 3)}
+                        <input disabled={authenticated} onKeyDown={(e) => handleInput(e, 3)}
                                ref={(el) => (inputRefs.current[3] = el)}
                                type={"text"} inputMode="numeric" maxLength={1}
                                className={"bg-transparent font-sans text-2xl text-white capitalize outline-none h-1/2 w-9 md:w-16 text-center"}/>
-                        <input disabled={authenticated} onKeyUp={(e) => handleInput(e, 4)}
+                        <input disabled={authenticated} onKeyDown={(e) => handleInput(e, 4)}
                                ref={(el) => (inputRefs.current[4] = el)}
                                type={"text"} inputMode="numeric" maxLength={1}
                                className={"bg-transparent font-sans text-2xl text-white capitalize outline-none h-1/2 w-9 md:w-16 text-center"}/>
-                        <input disabled={authenticated} onKeyUp={(e) => handleInput(e, 5)}
+                        <input disabled={authenticated} onKeyDown={(e) => handleInput(e, 5)}
                                ref={(el) => (inputRefs.current[5] = el)}
                                type={"text"} inputMode="numeric" maxLength={1}
                                className={"bg-transparent font-sans text-2xl text-white capitalize outline-none h-1/2 w-9 md:w-16 text-center"}/>
