@@ -15,7 +15,7 @@ export function RoomCreateButton() {
             return;
         }
 
-        axios.post("https://cloaked-383019.nw.r.appspot.com/create-room").then(r => {
+        axios.post("https://dekaolc.onrender.com/create-room").then(r => {
             if (r.data.success) {
                 toast.success(r.data.success);
                 navigate(`/room/${r.data.code}`);

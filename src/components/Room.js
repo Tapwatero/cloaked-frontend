@@ -25,7 +25,7 @@ export function Room({ presetCode = null }) {
 
 
     useEffect(() => {
-        axios.get(`https://cloaked-383019.nw.r.appspot.com/room/${code}`).then(r => {
+        axios.get(`https://dekaolc.onrender.com/room/${code}`).then(r => {
             if (r.data.error) {
                 navigate("/room/404", { replace: true});
                 console.log(r.data.error);

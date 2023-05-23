@@ -21,7 +21,7 @@ export function MessagePardonButton(props) {
             targetSessionID: props.targetSessionID
         }
 
-        axios.post("https://cloaked-383019.nw.r.appspot.com/pardon", data).then(r => {
+        axios.post("https://dekaolc.onrender.com/pardon", data).then(r => {
             if (r.data.success) {
                 toast.success(r.data.success);
             } else {

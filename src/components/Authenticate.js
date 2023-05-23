@@ -36,7 +36,7 @@ export function Authenticate() {
         if (token.length === 6) {
             const data = {token: token, sessionID: cookies["sessionID"]};
 
-            axios.post("https://cloaked-383019.nw.r.appspot.com/authenticate", data).then(r => {
+            axios.post("https://dekaolc.onrender.com/authenticate", data).then(r => {
                 if (r.data.success) {
                     setAuthenticated(true);
                     toast.success(r.data.success);

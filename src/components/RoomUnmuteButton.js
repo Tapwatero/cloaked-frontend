@@ -19,7 +19,7 @@ export function RoomUnmuteButton(props) {
             code: props.code
         }
 
-        axios.post(`https://cloaked-383019.nw.r.appspot.com/unmute-room`, data).then(r => {
+        axios.post(`https://dekaolc.onrender.com/unmute-room`, data).then(r => {
             if (r.data.success) {
                 toast.success(r.data.success);
             } else {
