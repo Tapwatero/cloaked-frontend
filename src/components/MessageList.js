@@ -27,7 +27,7 @@ export function MessageList({ messages, authenticated, sessionID, socket }) {
                     className={'flex flex-row gap-3 group relative items-center message mt-2 select-none font-sans text-2xl hover:opacity-75  cursor-pointer'}
                     key={index}>
                     <span className={'font-bold'}>{data.username+ ': '}</span>
-                    <span className={'capitalize'}>{data.message}</span>
+                    <span>{data.message}</span>
                     {(authenticated) ?
                         <>
                                     <span
