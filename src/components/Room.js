@@ -9,6 +9,7 @@ import { useCookies } from "react-cookie";
 import { setupSession } from "../Session";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
+import { profanity } from "@2toad/profanity";
 
 
 export function Room({ presetCode = null }) {
@@ -59,7 +60,7 @@ export function Room({ presetCode = null }) {
             <div
                 className={'sm:flex-col pb-8 grow-0 flex flex-wrap  gap-4 w-full justify-center items-center lg:flex-row'}>
                 <div className={'flex justify-center items-center lg:w-1/5 w-5/6'}>
-                    <NameInput handleNameChange={event => setUsername(event.target.value)}></NameInput>
+                    <NameInput handleNameChange={event => setUsername(profanity.censor(event.target.value))}></NameInput>
                 </div>
                 <div className={'flex justify-center items-center lg:w-1/3 w-5/6'}>
                     <MessageInput username={username} sessionID={cookies.sessionID} socket={socket} room={code}></MessageInput>
