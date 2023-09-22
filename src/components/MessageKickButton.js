@@ -20,7 +20,7 @@ export function MessageKickButton(props) {
 
 
 
-        axios.post("https://dekaolc.onrender.com/kick", data).then(r => {
+        axios.post("https://cloaked.onrender.com/kick", data).then(r => {
             if (r.data.success) {
                 toast.success(r.data.success);
             } else {
