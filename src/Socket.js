@@ -1,7 +1,7 @@
 import { io } from "socket.io-client";
 
 export const initializeSocket = (cookies, setAuthenticated, setMessages) => {
-    const socket = io('wss://cloaked.onrender.com', {
+    const socket = io('wss://cloaked-backend.onrender.com', {
         'reconnection': true,
         'reconnectionDelay': 500,
         'reconnectionDelayMax' : 2500,
