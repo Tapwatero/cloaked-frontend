@@ -25,7 +25,7 @@ export function MessageBanButton(props) {
         }
 
 
-        axios.post("https://cloaked.onrender.com/ban", data).then(r => {
+        axios.post("https://cloaked-backend.onrender.com/ban", data).then(r => {
             if (r.data.success) {
                 toast.success(r.data.success);
             } else {

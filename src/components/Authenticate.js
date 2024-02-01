@@ -36,7 +36,7 @@ export function Authenticate() {
         if (token.length === 6) {
             const data = {token: token, sessionID: cookies["sessionID"]};
 
-            axios.post("https://cloaked.onrender.com/authenticate", data).then(r => {
+            axios.post("https://cloaked-backend.onrender.com/authenticate", data).then(r => {
                 if (r.data.success) {
                     setAuthenticated(true);
                     toast.success(r.data.success);

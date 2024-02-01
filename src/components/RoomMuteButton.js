@@ -19,7 +19,7 @@ export function RoomMuteButton(props) {
             code: props.code
         }
 
-        axios.post(`https://cloaked.onrender.com/mute-room`, data).then(r => {
+        axios.post(`https://cloaked-backend.onrender.com/mute-room`, data).then(r => {
             if (r.data.success) {
                 toast.success(r.data.success);
             } else {
